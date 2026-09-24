@@ -381,19 +381,21 @@
                     <div class="col-md-8 col-sm-12 wow fadeInRight message-box" data-wow-delay="0.6s">
                         <h2 class="text-right">Send Us A Message</h2>
                         <!--form start-->
-                        <form id="contactForm" method="POST" action="mail.php">
+                        <form id="contactForm" method="POST" action="https://api.web3forms.com/submit">
+                            <input type="hidden" name="access_key" value="63d48e12-d81b-4c0a-9057-e1c56e74302e">
+                            <input type="hidden" name="subject" value="New message from portfolio website">
                             <div class="row">
                                 <div class="col-md-6 form-group">
                                     <!--name-->
-                                    <input type="text" class="form-control con-validate" id="contact-name" placeholder="Name" minlength=3 >
+                                    <input type="text" name="name" class="form-control con-validate" id="contact-name" placeholder="Name" minlength=3 >
                                 </div>
                                 <div class="col-md-6 form-group">
                                     <!--email-->
-                                    <input type="email" class="form-control con-validate" id="contact-email" placeholder="Email" >
+                                    <input type="email" name="email" class="form-control con-validate" id="contact-email" placeholder="Email" >
                                 </div>
                                 <div class="col-md-12 form-group">
                                     <!--message box-->
-                                    <textarea class="form-control con-validate" id="contact-message" placeholder="Message" rows=4 ></textarea>
+                                    <textarea name="message" class="form-control con-validate" id="contact-message" placeholder="Message" rows=4 ></textarea>
                                 </div>
                                 <div class="col-md-12">
                                     <button id="contact-submit" class="main-button">Send Message</button>
