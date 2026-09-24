@@ -184,13 +184,24 @@ $(document).ready(function() {
         if(required === 0) {
             $.ajax({
                 type: "POST",
-                url: 'mail.php',
-                data: { con_name: name, con_email: email, con_message: message },
+                url: 'https://api.web3forms.com/submit',
+                data: {
+                    access_key: '63d48e12-d81b-4c0a-9057-e1c56e74302e',
+                    subject: 'New message from portfolio website',
+                    name: name,
+                    email: email,
+                    message: message
+                },
+                dataType: 'json',
                 success: function(data) {
                     $("#contactForm input, #contactForm textarea").val('');
                     $("#contact-submit.main-button").html('Message Sent!');
                     $("#contact-submit.main-button").addClass("success");
                     console.log(data);
+                },
+                error: function() {
+                    $("#contact-submit.main-button").addClass('error');
+                    $("#contact-submit.main-button").html('Failed!');
                 }
             });
         } else {
